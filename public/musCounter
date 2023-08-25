@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button onclick:plusOne name:"+1">
+  </body>
+</html>
