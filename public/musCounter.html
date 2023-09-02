@@ -1,16 +1,87 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      body  {
+        background-color: #363636;
+        color: white;
+      }
+      input {
+        width: 98%;
+      }
+    </style>
+  </head>
   <body>
-    <table border＝1>
+    <table border="1" style="width: 100%;">
       <tr>
-        <td>Team 1</td>
-        <td>Mano</td>
-        <td>Team 2</td>
+        <td colspan="4" style="width: 100px;">Team 1</td>        
+        <td colspan="3">Mano</td>
+        <td colspan="4" style="width: 100px;">Team 2</td>
+      </tr>
+
+      <tr>
+        <td colspan="4" rowspan="4">
+          <div id="t1point" value="0">
+            ...
+          </div>
+        </td>
+        <td colspan="3"> Grande </td>
+        <td colspan="4" rowspan="4">
+          <div id="t2point" value="0">
+            ...
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td><button name="&lt;"></button></td>
+        <td><input type="number" max="100" min="0"></td>
+        <td><button name="&lt;"></button></td>
+      </tr>
+
+      <tr>
+        <td colspan="3"> Chica </td>       
       </tr>
       <tr>
-        
+        <td><button></button></td>
+        <td><input type="number" max="100" min="0"></td>
+        <td><button></button></td>
       </tr>
-      
-    <button onclick:plusOne name:"+1">
+
+      <tr>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+        <td colspan="3"> Pares </td>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+      </tr>
+
+      <tr>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+        <td><button></button></td>
+        <td><input type="number" max="100" min="0"></td>
+        <td><button></button></td>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+      </tr>
+
+      <tr>
+        <td colspan="4"> Vacas </td>
+        <td colspan="3"> Juego </td>
+        <td colspan="4"> Vacas </td>
+      </tr>
+
+      <tr>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+        <td><button></button></td>
+        <td><input type="number" max="100" min="0"></td>
+        <td><button></button></td>
+        <td colspan="2"></td>
+        <td colspan="2"></td>
+      </tr>
+    </table>
+    <h5>Version 0.0.1</h5>
   </body>
 </html>
