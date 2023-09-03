@@ -25,35 +25,61 @@
         size: 10px;
       }
 
+      table {
+        border-collapse: collapse;
+      }
+
     </style>
   </head>
   <body>
+
     <table border="1" style="width: 100%;">
+
+      <!--- Headers --->
       <tr>
+
         <td colspan="4" align="center" style="width: 100px;">Team 1</td>        
+
         <td colspan="3"><p align="center">Mano</p></td>
+
         <td colspan="4" align="center" style="width: 100px;">Team 2</td>
+
       </tr>
 
+      <!-- Points and grande -->
       <tr>
+
         <td colspan="4" rowspan="4" onclick="sumPoint1()" align="center">
           <div  class="points" value="0" >
             <p id="t1point" > 0 </p>
           </div>
         </td>
+
         <td colspan="1"> Grande </td>
-        <td rowspan="2"></td>
+
+        <td rowspan="2" align="center" onclick="{document.getElementById('Grande').innerHTML++}">
+          <div class="points" id="Grande">
+            0
+          </div>
+        </td>
+
         <td colspan="1"> Grande </td>
+
         <td colspan="4" rowspan="4" onclick="sumPoint2()" align="center">
           <div class="points" value="0" onclick="sumPoint2">
             <p id="t2point"> 0 </p>
           </div>
         </td>
+
       </tr>
 
       <tr>
-        <td><button name="&lt;"></button></td>
-        <td><button name="&lt;"></button></td>
+        <td align="center" onclick="{t1points = t1points + parseFloat(document.getElementById('Grande').innerHTML); document.getElementById('t1point').innerHTML = parseFloat(document.getElementById('t1point').innerHTML) + parseFloat(document.getElementById('Grande').innerHTML); document.getElementById('Grande').innerHTML = 0 }">
+          &lt;
+        </td>
+        <td align="center" onclick="{t2points = t2points + parseFloat(document.getElementById('Grande').innerHTML); document.getElementById('t2point').innerHTML = parseFloat(document.getElementById('t2point').innerHTML) + parseFloat(document.getElementById('Grande').innerHTML); document.getElementById('Grande').innerHTML = 0 }">
+          &gt;
+        </td>
       </tr>
 
       <tr>
@@ -100,7 +126,7 @@
       </tr>
     </table>
     <button value="RESET" onclick="{t1points = 0; t2points = 0; document.getElementById('t1point').innerHTML = t1points; document.getElementById('t2point').innerHTML = t2points}">RESET</button>
-    <h5>Version 0.1.0</h5>
+    <h5>Version 0.1.1</h5>
   </body>
   <script>
     let t1points = 0
@@ -113,6 +139,10 @@
     function sumPoint2() {
       t2points = t2points + 1
         document.getElementById('t2point').innerHTML = t2points
+    }
+
+    function sumGrande() {
+      
     }
   </script>
 </html>
