@@ -5,37 +5,54 @@
       body  {
         background-color: #363636;
         color: white;
+        user-select: none;
       }
       input {
         width: 98%;
       }
+
+      .points {
+        color: lightgreen;
+        font-family: Arial, Helvetica, sans-serif;
+        width: 90%;
+        height: 60%;
+        margin: auto;
+        user-select: none;
+      }
+
+      .arrow {
+        font-family: Arial, Helvetica, sans-serif;
+        size: 10px;
+      }
+
     </style>
   </head>
   <body>
     <table border="1" style="width: 100%;">
       <tr>
-        <td colspan="4" style="width: 100px;">Team 1</td>        
-        <td colspan="3">Mano</td>
-        <td colspan="4" style="width: 100px;">Team 2</td>
+        <td colspan="4" align="center" style="width: 100px;">Team 1</td>        
+        <td colspan="3"><p align="center">Mano</p></td>
+        <td colspan="4" align="center" style="width: 100px;">Team 2</td>
       </tr>
 
       <tr>
-        <td colspan="4" rowspan="4">
-          <div id="t1point" value="0">
-            ...
+        <td colspan="4" rowspan="4" onclick="sumPoint1()" align="center">
+          <div  class="points" value="0" >
+            <p id="t1point" > 0 </p>
           </div>
         </td>
-        <td colspan="3"> Grande </td>
-        <td colspan="4" rowspan="4">
-          <div id="t2point" value="0">
-            ...
+        <td colspan="1"> Grande </td>
+        <td rowspan="2"></td>
+        <td colspan="1"> Grande </td>
+        <td colspan="4" rowspan="4" onclick="sumPoint2()" align="center">
+          <div class="points" value="0" onclick="sumPoint2">
+            <p id="t2point"> 0 </p>
           </div>
         </td>
       </tr>
 
       <tr>
         <td><button name="&lt;"></button></td>
-        <td><input type="number" max="100" min="0"></td>
         <td><button name="&lt;"></button></td>
       </tr>
 
@@ -82,6 +99,20 @@
         <td colspan="2"></td>
       </tr>
     </table>
-    <h5>Version 0.0.1</h5>
+    <button value="RESET" onclick="{t1points = 0; t2points = 0; document.getElementById('t1point').innerHTML = t1points; document.getElementById('t2point').innerHTML = t2points}">RESET</button>
+    <h5>Version 0.1.0</h5>
   </body>
+  <script>
+    let t1points = 0
+    let t2points = 0
+    function sumPoint1() {
+        t1points = t1points + 1
+        document.getElementById('t1point').innerHTML = t1points
+    }
+
+    function sumPoint2() {
+      t2points = t2points + 1
+        document.getElementById('t2point').innerHTML = t2points
+    }
+  </script>
 </html>
