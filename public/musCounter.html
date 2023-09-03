@@ -83,12 +83,29 @@
       </tr>
 
       <tr>
-        <td colspan="3"> Chica </td>       
+
+        <td colspan="1"> Chica </td>
+
+        <td rowspan="2" align="center" onclick="{document.getElementById('Chica').innerHTML++}">
+          <div class="points" id="Chica">
+            0
+          </div>
+        </td>
+
+        <td colspan="1"> Chica</td>    
+
       </tr>
+
       <tr>
-        <td><button></button></td>
-        <td><input type="number" max="100" min="0"></td>
-        <td><button></button></td>
+        
+        <td align="center" onclick="{t1points = t1points + parseFloat(document.getElementById('Chica').innerHTML); document.getElementById('t1point').innerHTML = parseFloat(document.getElementById('t1point').innerHTML) + parseFloat(document.getElementById('Chica').innerHTML); document.getElementById('Chica').innerHTML = 0 }">
+          &lt;
+        </td>
+
+        <td align="center" onclick="{t2points = t2points + parseFloat(document.getElementById('Chica').innerHTML); document.getElementById('t2point').innerHTML = parseFloat(document.getElementById('t2point').innerHTML) + parseFloat(document.getElementById('Chica').innerHTML); document.getElementById('Chica').innerHTML = 0 }">
+          &gt;
+        </td>
+        
       </tr>
 
       <tr>
@@ -100,7 +117,15 @@
           +5
         </td>
 
-        <td colspan="3"> Pares </td>
+        <td colspan="1"> Pares </td>
+
+        <td rowspan="2" align="center" onclick="{document.getElementById('Pares').innerHTML++}">
+          <div class="points" id="Pares">
+            0
+          </div>
+        </td>
+
+        <td colspan="1"> Pares</td>    
 
         <td align="center" colspan="2" rowspan="2" onclick="{t2points = t2points - 1; document.getElementById('t2point').innerHTML = t2points}">
           -1 
@@ -114,37 +139,84 @@
 
       <tr>
         
-        <td><button></button></td>
-        <td><input type="number" max="100" min="0"></td>
-        <td><button></button></td>
+        <td align="center" onclick="{t1points = t1points + parseFloat(document.getElementById('Pares').innerHTML); document.getElementById('t1point').innerHTML = parseFloat(document.getElementById('t1point').innerHTML) + parseFloat(document.getElementById('Pares').innerHTML); document.getElementById('Pares').innerHTML = 0 }">
+          &lt;
+        </td>
+
+        <td align="center" onclick="{t2points = t2points + parseFloat(document.getElementById('Pares').innerHTML); document.getElementById('t2point').innerHTML = parseFloat(document.getElementById('t2point').innerHTML) + parseFloat(document.getElementById('Pares').innerHTML); document.getElementById('Pares').innerHTML = 0 }">
+          &gt;
+        </td>
        
       </tr>
 
       <tr>
         <td colspan="4" align="center" onclick="{document.getElementById('vacas1').innerHTML++}"> Vacas </td>
-        <td colspan="3"> Juego </td>
+
+        <td colspan="1"> Juego </td>
+
+        <td rowspan="2" align="center" onclick="{document.getElementById('Juego').innerHTML++}">
+          <div class="points" id="Juego">
+            0
+          </div>
+        </td>
+
+        <td colspan="1"> Juego </td>    
+
         <td colspan="4" align="center" onclick="{document.getElementById('vacas2').innerHTML++}"> Vacas </td>
       </tr>
 
       <tr>
-        <td align="center" colspan="4" onclick="{document.getElementById('vacas1').innerHTML++; t1points = 0; t2points = 0; document.getElementById('t1point').innerHTML = t1points; document.getElementById('t2point').innerHTML = t2points}">
+
+        <td align="center" colspan="4" onclick="{document.getElementById('vacas1').innerHTML++; t1points = 0; t2points = 0; document.getElementById('t1point').innerHTML = t1points; document.getElementById('t2point').innerHTML = t2points; document.getElementById('Grande').innerHTML = 0; document.getElementById('Chica').innerHTML = 0; document.getElementById('Pares').innerHTML = 0; document.getElementById('Juego').innerHTML = 0; }">
+
           <div class="points" id="vacas1">
             0
           </div>
+
         </td>
         
-        <td><button></button></td>
-        <td><input type="number" max="100" min="0"></td>
-        <td><button></button></td>
-        <td align="center" colspan="4" onclick="{document.getElementById('vacas2').innerHTML++; t1points = 0; t2points = 0; document.getElementById('t1point').innerHTML = t1points; document.getElementById('t2point').innerHTML = t2points}">
+        <td align="center" onclick="{t1points = t1points + parseFloat(document.getElementById('Juego').innerHTML); document.getElementById('t1point').innerHTML = parseFloat(document.getElementById('t1point').innerHTML) + parseFloat(document.getElementById('Juego').innerHTML); document.getElementById('Juego').innerHTML = 0 }">
+          &lt;
+        </td>
+
+        <td align="center" onclick="{t2points = t2points + parseFloat(document.getElementById('Juego').innerHTML); document.getElementById('t2point').innerHTML = parseFloat(document.getElementById('t2point').innerHTML) + parseFloat(document.getElementById('Juego').innerHTML); document.getElementById('Juego').innerHTML = 0 }">
+          &gt;
+        </td>
+
+        <td align="center" colspan="4" onclick="{document.getElementById('vacas2').innerHTML++; t1points = 0; t2points = 0; document.getElementById('t1point').innerHTML = t1points; document.getElementById('t2point').innerHTML = t2points; document.getElementById('Chica').innerHTML = 0; document.getElementById('Pares').innerHTML = 0; document.getElementById('Juego').innerHTML = 0;}">
           <div class="points" id="vacas2">
             0
           </div>
         </td>
+
       </tr>
+
     </table>
-    <button value="RESET" onclick="{t1points = 0; t2points = 0; document.getElementById('t1point').innerHTML = t1points; document.getElementById('t2point').innerHTML = t2points; document.getElementById('vacas2').innerHTML = 0; document.getElementById('vacas1').innerHTML = 0 }">RESET</button>
-    <h5>Version 0.1.2</h5>
+
+    <!--General Reset-->
+
+    <br><br>
+
+    <button value="RESET" onclick="{
+
+        t1points = 0; 
+        t2points = 0; 
+        document.getElementById('t1point').innerHTML = t1points; 
+        document.getElementById('t2point').innerHTML = t2points; 
+        document.getElementById('vacas2').innerHTML = 0; 
+        document.getElementById('vacas1').innerHTML = 0; 
+        document.getElementById('Grande').innerHTML = 0;
+        document.getElementById('Chica').innerHTML = 0; 
+        document.getElementById('Pares').innerHTML = 0; 
+        document.getElementById('Juego').innerHTML = 0; 
+        
+          }">
+      RESET
+    </button>
+    
+    <!--Version-->
+    <h5>Version 1.0.0</h5>
+
   </body>
   <script>
     let t1points = 0
